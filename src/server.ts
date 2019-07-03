@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { createKoaServer } from "routing-controllers";
 import setupDb from './db';
 import AdvertisementController from './controllers/advertisement.controller';
@@ -6,7 +5,7 @@ import UserController from './controllers/user.controller';
 import AuthenticationController from './controllers/auth.controller';
 
 // Define the port
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4003;
 
 // Create the koa server
 const app = createKoaServer({
