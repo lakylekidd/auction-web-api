@@ -22,17 +22,19 @@ export default class AdvertisementController {
      * Returns a single advertisement based on id
      * @param id The id of the page to find
      */
-    @Get('/advertisement/:id')
+    @Get('/advertisements/:id')
     async getById(@Param('id') id: number) {
-        throw new Error("Method not implemented!");
+        return this.repository.findOne(id)
+        // throw new Error("Method not implemented!");
     }
 
     /**
      * Returns a list of available advertisements
      */
-    @Get('/advertisement')
+    @Get('/advertisements')
     async allPages() {
-        throw new Error("Method not implemented!");
+        return this.repository.find().then(advertisement => advertisement)
+        // throw new Error("Method not implemented!");
     }
 
     /**
@@ -40,18 +42,23 @@ export default class AdvertisementController {
      * @param id The id the entity to update
      * @param body The values needed to update the entity
      */
-    @Put('/pages/:id')
+    @Put('/advertisements/:id')
     async updatePage(@Param('id') id: number, @Body() body: Partial<Advertisement>) {
-        throw new Error("Method not implemented!");
+        const add = await this.repository.findOne(id)
+        if (!add) throw new NotFoundError('No Add Found!')
+
+        return this.repository.merge(add, body).save()
+        // throw new Error("Method not implemented!");
     }
 
     /**
      * Creates a new advertisements and saves it to the db.
      * @param body The values needed to create the entity
      */
-    @Post('/pages')
+    @Post('/advertisements')
     @HttpCode(201)
     async createPage(@Body() body: Advertisement) {
-        throw new Error("Method not implemented!");
+        return body.save()
+        // throw new Error("Method not implemented!");
     }
 }
