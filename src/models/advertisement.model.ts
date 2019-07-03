@@ -31,9 +31,8 @@ export default class Advertisement extends BaseEntity {
     @Column('text')
     pictureUrl: string
 
-    @IsNumber()
     @IsNotEmpty()
-    @Column('number')
+    @Column('integer')
     price: number
 
     @IsString()
@@ -42,7 +41,6 @@ export default class Advertisement extends BaseEntity {
     @Column('text')
     email: string
 
-    @IsNumber()
-    @Column('number')
+    @Column('integer')
     userId: number | null
 }
