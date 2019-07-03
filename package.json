@@ -2,7 +2,7 @@
   "name": "auction-api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "build/server.js",
   "engines": {
     "node": "12.5.0",
     "npm": "6.9.0"
