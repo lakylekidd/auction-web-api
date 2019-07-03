@@ -2,7 +2,10 @@ import { createConnection } from 'typeorm';
 import { DefaultNamingStrategy } from 'typeorm/naming-strategy/DefaultNamingStrategy';
 import { NamingStrategyInterface } from 'typeorm/naming-strategy/NamingStrategyInterface';
 import { snakeCase } from 'typeorm/util/StringUtils';
+<<<<<<< Updated upstream
 import User from './models/user.model';
+=======
+>>>>>>> Stashed changes
 import Advertisement from './models/advertisement.model';
 
 /**
@@ -34,8 +37,13 @@ export default () =>
         url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
         entities: [
             // ---------> ADD ALL ENTITIES HERE
+<<<<<<< Updated upstream
             User,
             Advertisement
+=======
+            Advertisement,
+
+>>>>>>> Stashed changes
         ],
         synchronize: true,
         logging: true,
