@@ -2,6 +2,8 @@ import { createConnection } from 'typeorm';
 import { DefaultNamingStrategy } from 'typeorm/naming-strategy/DefaultNamingStrategy';
 import { NamingStrategyInterface } from 'typeorm/naming-strategy/NamingStrategyInterface';
 import { snakeCase } from 'typeorm/util/StringUtils';
+import User from './models/user.model';
+import Advertisement from './models/advertisement.model';
 
 /**
  * Class that defines naming strategies for database
@@ -32,7 +34,8 @@ export default () =>
         url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
         entities: [
             // ---------> ADD ALL ENTITIES HERE
-
+            User,
+            Advertisement
         ],
         synchronize: true,
         logging: true,
