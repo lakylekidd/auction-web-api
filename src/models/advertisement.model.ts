@@ -31,10 +31,7 @@ export default class Advertisement extends BaseEntity {
     @Column('text')
     pictureUrl: string
 
-<<<<<<< Updated upstream
     @IsNotEmpty()
-=======
->>>>>>> Stashed changes
     @Column('integer')
     price: number
 
